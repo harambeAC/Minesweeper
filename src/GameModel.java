@@ -46,15 +46,32 @@ public class GameModel {
         			}
         			
         			int score = 0;
-        			if(
-        			(i < WIDTH-1 && grid[i+1][j] == -1) ||
-        			(j < HEIGHT-1 && grid[j][j+1] == -1) ||
-        			(i < WIDTH-1 && j < HEIGHT-1 && grid[i+1][j+1] == -1) ||
-        			(i > 0 && grid[i-1][j] == -1) ||
-        			(j > 0 && grid[i][j-1] == -1) || 
-        			(i > 0 && j > 0 && grid[i-1][j-1] == -1)){       				
+        			
+        			if(i < WIDTH-1 && grid[i+1][j] == -1) {
         				score++;
         			}
+        			if(j < HEIGHT-1 && grid[i][j+1] == -1) {
+        				score++;
+        			}
+        			if(i < WIDTH-1 && j < HEIGHT-1 && grid[i+1][j+1] == -1) {
+        				score++;
+        			}
+        			if(i < WIDTH-1 && j > 0 && grid[i+1][j-1] == -1) {
+        				score++;
+        			}
+        			if(i > 0 && j < HEIGHT-1 && grid[i-1][j+1] == -1) {
+        				score++;
+        			}
+        			if (i > 0 && grid[i-1][j] == -1) {
+        				score++;
+        			}
+        			if (j > 0 && grid[i][j-1] == -1) {
+        				score++;
+        			}
+        			if(i > 0 && j > 0 && grid[i-1][j-1] == -1){       				
+        				score++;
+        			}
+        			
         			grid[i][j] = score;
         		}
         }

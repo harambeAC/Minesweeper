@@ -32,11 +32,11 @@ public class Canvas extends JPanel {
 			for(int j = 0; j<grid[0].length; j++){
 				if(!revealed[i][j]){
 					g.setColor(Color.WHITE);
-					g.fillRect(j*50, i*50, 50, 50);
+					g.fillRect(j*SIZE, i*SIZE, SIZE, SIZE);
 				}else{
-					g.drawString(model.grid[i][j]+"", j*50+25, i*50+25);
 					g.setColor(Color.RED);
-					g.fillRect(j*50, i*50, 50, 50);
+					//g.fillRect((j-1)*(SIZE), (i-1)*(SIZE), SIZE, SIZE);
+					g.drawString(""+model.grid[i][j], (j)*SIZE+25, (i)*SIZE+25);
 				}
 			}
 		}
